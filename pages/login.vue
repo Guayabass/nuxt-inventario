@@ -1,10 +1,10 @@
 <template>
     <section className="h-screen w-screen m-0 p-0 box-border">
         <img className="absolute bottom-0 left-0" src="~/assets/icons/waves.svg" alt="">
-        <div className="flex flex-col justify-center items-center">
-            <img src="~/assets/icons/login.svg" alt="Man attempting to open a door">
+        <div className="h-screen w-screen flex flex-col justify-center items-center lg:grid lg:grid-cols-2">
+            <img src="~/assets/icons/login.svg" alt="Man attempting to open a door" className="lg:block hidden w-1/2 hover:scale-150 transition-all duration-500 transform mx-auto">
             <form className="flex flex-col justify-center items-center">
-                <img className="w-32" src="~/assets/icons/avatar.svg" alt="picture of a faceless man">
+                <img className="w-32 hover:scale-150 transition-all duration-500" src="~/assets/icons/avatar.svg" alt="picture of a faceless man">
                 <h2 className="my-8 font-display font-bold text-3xl text-gray-700 text-center">Sign in</h2>
                 <div className="relative">
                     <i class="pi pi-user absolute text-primarycolor text-xl"></i>
@@ -27,4 +27,6 @@
 </template>
 
 <script setup lang="ts">
+
+//HACER UN COMPONENTE PARA LOGIN Y REGISTER, O TAL VEZ UN LAYOUT, INVESTIGUE.
 </script>
