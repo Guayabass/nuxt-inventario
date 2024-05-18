@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NuxtLink to="/login"><p className="text-[#b34b76]">Login</p></NuxtLink>
+        <NuxtLink to="/auth"><p className="text-[#b34b76]">Login</p></NuxtLink>
     </div>
 </template>
 
