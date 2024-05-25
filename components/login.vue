@@ -1,6 +1,5 @@
 <template>
     <section className="h-screen w-screen m-0 p-0 box-border">
-        <img className="absolute bottom-0 left-0" src="~/assets/icons/waves.svg" alt="">
         <div className="h-screen w-screen flex flex-col justify-center items-center lg:grid lg:grid-cols-2">
             <img src="~/assets/icons/login.svg" alt="Man attempting to open a door"
                 className="lg:block hidden w-1/2 hover:scale-150 transition-all duration-500 transform mx-auto">
@@ -33,6 +32,10 @@
 import { useAuthStore } from "../stores/authStore";
 
 const authStore = useAuthStore()
+
+definePageMeta({
+    middleware: 'auth',
+})
 
 //const registerDB = async () => {}
 
