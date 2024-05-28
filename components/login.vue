@@ -9,20 +9,20 @@
                 <h2 className="my-8 font-display font-bold text-3xl text-gray-700 text-center">Sign in</h2>
                 <div className="relative">
                     <i class="pi pi-user absolute text-primarycolor text-xl"></i>
-                    <input type="text" placeholder="Username"
-                        className="pl-8 border-b-2 focus:outline-none focus:border-primarycolor transition-all duration-500 font-display capitalize text-lg">
+                    <input v-model="username" type="text" placeholder="Username"
+                        className="pl-8 border-b-2 focus:outline-none focus:border-primarycolor transition-all duration-500 font-display text-lg">
                 </div>
                 <div className="relative mt-8">
                     <i class="pi pi-lock absolute text-primarycolor text-xl"></i>
-                    <input type="password" placeholder="Password"
-                        className="pl-8 border-b-2 focus:outline-none focus:border-primarycolor transition-all duration-500 font-display capitalize text-lg">
+                    <input v-model="password" type="password" placeholder="Password"
+                        className="pl-8 border-b-2 focus:outline-none focus:border-primarycolor transition-all duration-500 font-display text-lg">
                 </div>
                 <NuxtLink to="/forgotPassword">
                     <p className="mt-4 text-gray-600 font-bold font-display">Forgot Your Password?</p>
                 </NuxtLink>
                     <p @click="onClick" className="mt-4 text-gray-600 font-bold font-display cursor-pointer">Don't have an account? Register here!</p>
                 <button
-                    className="py-3 px-20 bg-primarycolor rounded-full text-whte font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500">Login</button>
+                    @click="checkLogin" className="py-3 px-20 bg-primarycolor rounded-full text-whte font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500">Login</button>
             </form>
         </div>
     </section>
@@ -33,11 +33,19 @@ import { useAuthStore } from "../stores/authStore";
 
 const authStore = useAuthStore()
 
-definePageMeta({
-    middleware: 'auth',
-})
+const username = ref("")
+const password = ref("")
 
-//const registerDB = async () => {}
+const user = {
+  username: 'test@gmail.com',
+  password: '123456',
+}
+const checkLogin = () => {
+    if (username.value === user.username && password.value === user.password ) {
+        authStore.userLogged = true
+        navigateTo('/dashboard');
+    } 
+}
 
 const onClick = () => {
     authStore.isLogged = !authStore.isLogged
