@@ -15,9 +15,6 @@
 import { useAuthStore } from "../stores/authStore";
 import register from "~/components/register.vue";
 import login from "~/components/login.vue";
-definePageMeta({
-    middleware: 'auth',
-})
 
 const authStore = useAuthStore();
 const activeComponent = shallowRef(login);
