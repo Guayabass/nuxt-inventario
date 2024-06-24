@@ -1,17 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import path from 'path';
 export default defineNuxtConfig({
-  modules: ["nuxt-primevue", "@nuxtjs/tailwindcss", '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt'],
-  primevue: {
-    options: {
-      unstyled: true
-    },
-    importPT: { as: 'Lara', from: '~/presets/lara' }    //import and apply preset  
-  },
+  modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@primevue/nuxt-module'],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  primevue: {
+    options: {
+      ripple: true,
+    },
+    importPT: { from: path.resolve(__dirname, './presets/aura/') } 
   },
   pinia: {
     storesDirs: ['./stores/**', './custom-folder/stores/**'],

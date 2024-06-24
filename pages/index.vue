@@ -1,21 +1,6 @@
 <template>
   <div class="w-screen h-screen">
-    <Menubar
-      :pt="{
-        root: {
-          class: [
-            'relative',
-            'flex',
-            'items-center',
-            'p-2',
-            'rounded-md',
-            'bg-surface-50 dark:bg-primarycolor',
-            'border border-surface-200 dark:border-surface-700',
-          ],
-        },
-      }"
-      :model="items"
-    />
+    <Menubar :model="items" :pt="{root: {class: 'bg-primarycolor'}}"/>
   </div>
 </template>
 
@@ -67,3 +52,4 @@ const items = ref([
   },
 ]);
 </script>
+
