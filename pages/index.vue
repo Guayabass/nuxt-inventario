@@ -1,4 +1,5 @@
 <template>
+  <!-- new project to see if that fixes it -->
   <div class="w-screen h-screen">
     <Menubar :model="items" :pt="{root: {class: 'bg-primarycolor'}}"/>
   </div>
