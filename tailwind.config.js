@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -12,7 +12,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primarycolor: "#D2FF41",
+        primarycolor: "#57CC99",
       },
     },
     fontFamily: {

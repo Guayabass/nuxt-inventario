@@ -1,7 +1,7 @@
 <template>
-  <div className="h-screen w-screen m-0 p-0 box-border">
+  <div class="h-screen w-screen m-0 p-0 box-border bg-white">
     <img
-      className="absolute bottom-0 left-0"
+      class="absolute bottom-0 left-0"
       src="~/assets/icons/waves.svg"
       alt=""
     />

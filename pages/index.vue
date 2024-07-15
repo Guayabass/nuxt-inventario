@@ -1,7 +1,11 @@
 <template>
-  <!-- new project to see if that fixes it -->
-  <div class="w-screen h-screen">
-    <Menubar :model="items" :pt="{root: {class: 'bg-primarycolor'}}"/>
+  <div class="w-screen h-screen bg-white">
+    <Menubar :model="items" 
+    :ptOptions="{ mergeSections: false }" :pt="{
+        root:
+          'bg-primarycolor border-none',
+        rootList: 'flex flex-row',
+      }"/>
   </div>
 </template>
 
@@ -53,4 +57,3 @@ const items = ref([
   },
 ]);
 </script>
-
