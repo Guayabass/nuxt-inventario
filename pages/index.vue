@@ -1,11 +1,15 @@
 <template>
   <div class="w-screen h-screen bg-white">
-    <Menubar :model="items" 
-    :ptOptions="{ mergeSections: false }" :pt="{
-        root:
-          'bg-primarycolor border-none',
-        rootList: 'flex flex-row',
-      }"/>
+    <Menubar
+      :model="items"
+      :ptOptions="{ mergeSections: false }"
+      :pt="{
+        root: 'bg-primarycolor border-none',
+        itemContent:
+          'hover:bg-secondarycolor hover:rounded focus:bg-secondarycolor focus:rounded active:bg-secondarycolor active:rounded',
+        itemIcon: 'text-thirdcolor',
+      }"
+    />
   </div>
 </template>
 
@@ -18,38 +22,6 @@ const items = ref([
   {
     label: "Features",
     icon: "pi pi-star",
-  },
-  {
-    label: "Projects",
-    icon: "pi pi-search",
-    items: [
-      {
-        label: "Components",
-        icon: "pi pi-bolt",
-      },
-      {
-        label: "Blocks",
-        icon: "pi pi-server",
-      },
-      {
-        label: "UI Kit",
-        icon: "pi pi-pencil",
-      },
-      {
-        label: "Templates",
-        icon: "pi pi-palette",
-        items: [
-          {
-            label: "Apollo",
-            icon: "pi pi-palette",
-          },
-          {
-            label: "Ultima",
-            icon: "pi pi-palette",
-          },
-        ],
-      },
-    ],
   },
   {
     label: "Contact",

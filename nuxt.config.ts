@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import Aura from '@primevue/themes/aura';
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
@@ -7,8 +8,20 @@ export default defineNuxtConfig({
     "@primevue/nuxt-module",
   ],
   primevue: {
-    options: {
-      unstyled: true,
+      options: {
+        ripple: true,
+        inputVariant: 'filled',
+        theme: {
+            preset: Aura,
+            options: {
+                prefix: 'p',
+                darkModeSelector: 'system',
+                cssLayer: {
+                  name: 'primevue',
+                  order: 'tailwind-base, primevue, tailwind-utilities'
+              }
+            }
+        }
     },
   },
   postcss: {
